@@ -1,5 +1,5 @@
 import React from "react";
-import s from "./Home.module.css";
+import s from "./Main.module.css";
 import personPhoto from "../../assets/images/homeImages/manPhoto.png";
 import educationPhoto from "../../assets/images/homeImages/education.png";
 import sciencePhoto from "../../assets/images/homeImages/science.png";
@@ -14,8 +14,10 @@ import backgroundImageFour from "../../assets/images/homeImages/overlap-3-tooth.
 import inactiveArrowButton from "../../assets/images/homeImages/inactive-arrow.svg";
 import activeArrowButton from "../../assets/images/homeImages/active-arrow.svg";
 import carouselPhotoOne from "../../assets/images/homeImages/carousel-photo-1.png";
+import { Header } from "../../components/Header/Header";
+import { Footer } from "../../components/Footer/Footer";
 
-export const Home = () => {
+const Home = () => {
   return (
     <div>
       <div className={s.overlap_1}>
@@ -119,8 +121,8 @@ export const Home = () => {
         </p>
       </div>
       <div className={s.overlap_3}>
-        <img src={backgroundImageThree} alt="" className={s.logo}/>
-        <img src={backgroundImageFour} alt="" className={s.tooth}/>
+        <img src={backgroundImageThree} alt="" className={s.logo} />
+        <img src={backgroundImageFour} alt="" className={s.tooth} />
         <div className={s.arrow_buttons}>
           <img src={inactiveArrowButton} alt="Назад" />
           <img src={activeArrowButton} alt="Вперед" />
@@ -130,18 +132,21 @@ export const Home = () => {
         </div>
         <div className={s.indicator}></div>
         <div className={s.text_block_one}>
-          <p>РУДН — в числе лучших <br />российских университетов мирового уровня.</p>
           <p>
-            Университет входит в мировые рейтинги THE, QS и RUR. <br /> В категориях
-            «Количество международных студентов» и «Соотношение количества
-            преподавателей к количеству студентов» (student-to-staff ratio) мы —
-            среди лидеров.
+            РУДН — в числе лучших <br />
+            российских университетов мирового уровня.
+          </p>
+          <p>
+            Университет входит в мировые рейтинги THE, QS и RUR. <br /> В
+            категориях «Количество международных студентов» и «Соотношение
+            количества преподавателей к количеству студентов» (student-to-staff
+            ratio) мы — среди лидеров.
           </p>
           <p>
             Рейтинг UI Green Metric оценивает наш кампус как самый «зеленый» в
-            России. <br /> РУДН — обладатель максимальных «5 звёзд» международного
-            рейтинга QS Stars, входит втройку лидеров среди российских вузов по
-            версии рейтинга.
+            России. <br /> РУДН — обладатель максимальных «5 звёзд»
+            международного рейтинга QS Stars, входит втройку лидеров среди
+            российских вузов по версии рейтинга.
           </p>
         </div>
         <div className={s.text_block_two}>
@@ -154,9 +159,10 @@ export const Home = () => {
           <div className={s.container}>
             <div className={s.text_column_one}>
               <p>
-                ИЦС сотрудничает с ведущими <br /> производителями стоматологического
-                оборудования и материалов, что позволяет организовывать учебный
-                процесс с учетом <br />самых инновационных методов и технологий.
+                ИЦС сотрудничает с ведущими <br /> производителями
+                стоматологического оборудования и материалов, что позволяет
+                организовывать учебный процесс с учетом <br />
+                самых инновационных методов и технологий.
               </p>
               <p>
                 Клинические базы ИЦС – это современные стоматологические
@@ -166,8 +172,8 @@ export const Home = () => {
             </div>
             <div className={s.text_column_two}>
               <p>
-                Сотрудники клиник ежедневно <br /> занимаются научной и клинической
-                работой.
+                Сотрудники клиник ежедневно <br /> занимаются научной и
+                клинической работой.
               </p>
               <p>
                 За период 2020-2023 гг. командой центра «Марти» было изобретено
@@ -182,6 +188,16 @@ export const Home = () => {
           </div>
         </div>
       </div>
+    </div>
+  );
+};
+
+export const Main = () => {
+  return (
+    <div>
+      <Header></Header>
+      <Home></Home>
+      <Footer></Footer>
     </div>
   );
 };
