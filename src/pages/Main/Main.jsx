@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import s from "./Main.module.css";
 import personPhoto from "../../assets/images/homeImages/manPhoto.png";
 import educationPhoto from "../../assets/images/homeImages/education.png";
@@ -16,6 +16,7 @@ import activeArrowButton from "../../assets/images/homeImages/active-arrow.svg";
 import carouselPhotoOne from "../../assets/images/homeImages/carousel-photo-1.png";
 import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/Footer/Footer";
+import { PopupMenu } from "../../components/PopupMenu/PopupMenu";
 
 const Home = () => {
   return (
@@ -193,9 +194,11 @@ const Home = () => {
 };
 
 export const Main = () => {
+  const [isMenuOpen, setMenuOpen] = useState(false)
   return (
-    <div>
-      <Header></Header>
+    <div className={s.main_container}>
+      <PopupMenu isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen}></PopupMenu>
+      <Header isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen}></Header>
       <Home></Home>
       <Footer></Footer>
     </div>
