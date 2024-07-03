@@ -2,7 +2,7 @@
     position: fixed;
     z-index: 1000;
     background-color:rgba(17, 17, 25, 1) ;
-    height: 50vh;
+    height: 420px;
     width: 40vw;
     left: -160px;
     transform: translateX(-100%);
