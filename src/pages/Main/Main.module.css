@@ -451,7 +451,6 @@
     color: rgba(29, 74, 231, 1);
     text-decoration-line: underline;
     cursor: pointer;
-    color: rgba(17, 17, 25, 1);
 }
 
 .group1_3 .container {
@@ -691,8 +690,220 @@
 
 
 @media (max-width: 400px) {
-    .overlap_1, .overlap_2, .overlap_3, .established{
+    .overlap_3, .established{
         display: none;
+    }
+    
+    .main_container {
+        position: relative;
+    }
+    
+    .overlap_1 {
+        position: relative;
+    }
+    
+    .overlap_1>img {
+        position: absolute;
+        opacity: 0.04;
+        right: 0;
+        top: 60px;
+        width: 80%;
+    }
+    
+    .group1_1 {
+        display: grid;
+        grid-template-columns: 150px 150px;
+        margin-left: 6.5vw;
+        gap: 6.5vw;
+        margin-top: 4.89vh;
+    }
+    
+    .group1_1 .container p:first-child {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0.02em;
+        text-align: left;
+    }
+    
+    .group1_1 .container p:last-child {
+        font-size: 9px;
+        font-weight: 400;
+        line-height: 19px;
+        text-align: left;
+    }
+    
+    .group1_1 img {
+        margin-left: 20px;
+        width: 150px;
+    }
+    
+    
+    
+    
+    
+    
+    .group1_2 {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-left: 6.5vw;
+        gap: 0px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .group1_2 .education img,
+    .group1_2 .science img {
+        width: 95%;
+    }
+    
+    .group1_2 .education,
+    .group1_2 .science {
+        position: relative;
+        margin-bottom: 20px;
+    }
+    
+    .group1_2 .education .container p,
+    .group1_2 .science .container p {
+        background-color: rgba(242, 242, 255, 1);
+        display: flex;
+        align-items: center;
+        font-size: 25px;
+        font-weight: 400;
+        text-align: left;
+        position: absolute;
+        bottom: 50px;
+        padding-left: 20px;
+        height: 50px;
+        border-radius: 0 33px 0 0;
+    }
+    
+    .group1_2 .education .container p {
+        width: 170px;
+    }
+    
+    .group1_2 .science .container p {
+        width: 150px;
+    }
+    
+    .education>p,
+    .science>p {
+        margin-left: 20px;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 61.2px;
+        text-align: left;
+        margin-top: 0;
+        color: rgba(29, 74, 231, 1);
+        text-decoration-line: underline;
+        cursor: pointer;
+    }
+
+    .group1_3 > img {
+        width: 100%;
+    }
+    
+    .group1_3 .container {
+        position: relative;
+        margin-bottom: 120px;
+    }
+    
+    .group1_3 .container p {
+        background-color: rgba(242, 242, 255, 1);
+        display: flex;
+        align-items: center;
+        font-size: 9px;
+        font-weight: 400;
+        line-height: 12px;
+        text-align: left;
+        position: absolute;
+        bottom: -5px;
+        padding-left: 20px;
+        height: 70px;
+        border-radius: 0 33px 0 0;
+        width: 200px;
+        color: rgba(17, 17, 25, 1);
+        padding-right: 20px;
+    }
+
+
+
+
+
+
+
+
+    .overlap_2 {
+        display: grid;
+        grid-template-columns: 1fr 90px 970px;
+        margin-bottom: 100px;
+        position: relative;
+    }
+    
+    .overlap_2>img {
+        position: absolute;
+    }
+    
+    .group2_1 p {
+        font-size: 60px;
+        font-weight: 400;
+        line-height: 78px;
+        text-align: left;
+        margin-left: 130px;
+    }
+    
+    .group2_2 {
+        position: relative;
+    }
+    
+    .group2_2 .route {
+        position: relative;
+    }
+    
+    .group2_2 .route .blueCircle {
+        position: absolute;
+        top: 50px;
+        right: 50px
+    }
+    
+    .group2_2 .route .line {
+        position: absolute;
+        top: 140px;
+        right: 90px
+    }
+    
+    .group2_2 .route .grayCircle_first {
+        position: absolute;
+        top: 345px;
+        right: 50px
+    }
+    
+    .group2_2 .route .grayCircle_second {
+        position: absolute;
+        top: 910px;
+        right: 50px
+    }
+    
+    .group2_3 .text_1,
+    .group2_3 .text_2,
+    .group2_3 .text_3 {
+        font-size: 36px;
+        font-weight: 400;
+        line-height: 57.6px;
+        text-align: left;
+    }
+    
+    .group2_3 .text_1 {
+        margin-bottom: 140px;
+    }
+    
+    .group2_3 .text_2 {
+        margin-bottom: 150px;
+    }
+    
+    .group2_3 .text_2 p:first-child,
+    .group2_3 .text_3 p:first-child {
+        margin-bottom: 60px;
     }
 }
 
