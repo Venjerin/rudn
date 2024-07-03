@@ -690,10 +690,6 @@
 
 
 @media (max-width: 400px) {
-    .overlap_3, .established{
-        display: none;
-    }
-    
     .main_container {
         position: relative;
     }
@@ -724,6 +720,7 @@
         line-height: 20px;
         letter-spacing: 0.02em;
         text-align: left;
+        margin-top: 0;
     }
     
     .group1_1 .container p:last-child {
@@ -805,7 +802,7 @@
     
     .group1_3 .container {
         position: relative;
-        margin-bottom: 120px;
+        margin-bottom: 0px;
     }
     
     .group1_3 .container p {
@@ -835,25 +832,34 @@
 
     .overlap_2 {
         display: grid;
-        grid-template-columns: 1fr 90px 970px;
-        margin-bottom: 100px;
+        grid-template-areas: "a . ."
+                             "b c c";
+        margin-bottom: 50px;
         position: relative;
     }
     
     .overlap_2>img {
         position: absolute;
+        width: 400px;
+        top: 40px
+    }
+
+    .group2_1 {
+        grid-area: a;
     }
     
     .group2_1 p {
-        font-size: 60px;
+        font-size: 26px;
         font-weight: 400;
-        line-height: 78px;
+        line-height: 20px;
         text-align: left;
-        margin-left: 130px;
+        margin-left: 20px;
     }
     
     .group2_2 {
         position: relative;
+        grid-area: b;
+        height: 120px;
     }
     
     .group2_2 .route {
@@ -862,47 +868,185 @@
     
     .group2_2 .route .blueCircle {
         position: absolute;
-        top: 50px;
-        right: 50px
+        top: 20px;
+        right: 50px;
+        width: 30px;
     }
     
     .group2_2 .route .line {
         position: absolute;
-        top: 140px;
-        right: 90px
+        top: 49px;
+        right: 62.5px;
+        width: 5px;
+        height: 280px;
     }
     
     .group2_2 .route .grayCircle_first {
         position: absolute;
-        top: 345px;
-        right: 50px
+        top: 120px;
+        right: 50px;
+        width: 30px;
     }
     
     .group2_2 .route .grayCircle_second {
         position: absolute;
-        top: 910px;
-        right: 50px
+        top: 320px;
+        right: 50px;
+        width: 30px;
+    }
+
+    .group2_3 {
+        grid-area: c;
     }
     
     .group2_3 .text_1,
     .group2_3 .text_2,
     .group2_3 .text_3 {
-        font-size: 36px;
+        font-size: 12px;
         font-weight: 400;
-        line-height: 57.6px;
+        line-height: 19px;
         text-align: left;
+        width: 250px;
     }
     
     .group2_3 .text_1 {
-        margin-bottom: 140px;
+        margin-bottom: 50px;
     }
     
     .group2_3 .text_2 {
-        margin-bottom: 150px;
+        margin-bottom: 50px;
     }
     
     .group2_3 .text_2 p:first-child,
     .group2_3 .text_3 p:first-child {
+        margin-bottom: 20px;
+    }
+
+
+
+
+
+
+    .established {
+        margin-left: 20px;
+        width: 250px;
+    }
+    
+    .established p:first-child {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 26px;
+        text-align: left;
+    
+    }
+    
+    .established p:last-child {
+        font-size: 11px;
+        font-weight: 400;
+        line-height: 20px;
+        text-align: left;
+    }
+
+
+
+
+
+
+
+
+    .overlap_3 .logo {
+        top:500px;
+        z-index: -1;
+        right: 00px;
+    }
+    
+    .overlap_3 .tooth {
+        bottom: -550px;
+        width: 100%;
+    }
+    
+    .overlap_3 .arrow_buttons {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+    
+    .overlap_3 .arrow_buttons img {
+        cursor: pointer;
+        width: 40px;
+    }
+    
+    .overlap_3 .arrow_buttons img:last-child {
+        margin-left: 20px;
+        margin-right: 30px;
+    }
+    
+    .overlap_3 .photo_carousel img {
+        width: 100%;
+    }
+    
+    .overlap_3 .text_block_one {
+        font-size: 11px;
+        font-weight: 400;
+        line-height: 20px;
+        text-align: left;
+        width: 340px;
+        height: 200px;
+        margin-left: 20px;
+    }
+    
+    .overlap_3 .text_block_one p:first-child {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 25px;
+        text-align: left;
+    }
+    
+    .overlap_3 .text_block_one p:last-child {
+        margin-top: 50px;
+    }
+    
+    
+    .overlap_3 .text_block_two {
+        font-size: 11px;
+        font-weight: 400;
+        line-height: 20px;
+        text-align: left;
+        margin-left: 20px;
+        margin-right: 20px;
+        width: 350px;
+    }
+    
+    .overlap_3 .text_block_two>p:first-child {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 25px;
+        letter-spacing: 0.02em;
+        text-align: left;
+        margin-top: 130px;
+        width: 90%;
+    }
+    
+    .overlap_3 .text_block_two .container {
+        display: grid;
+        grid-template-columns: 150px 150px;
+        gap: 20px;
+    }
+    
+    .overlap_3 .text_block_two .container .text_column_one p:first-child {
+        margin-bottom: 70px;
+    }
+    
+    .overlap_3 .text_block_two .container .text_column_two p:first-child {
+        font-size: 11px;
+        font-weight: 700;
+        line-height: 20px;
+        text-align: left;
+        margin-bottom: 60px;
+    }
+    
+    .overlap_3 .text_block_two .container .text_column_two p:nth-child(2) {
         margin-bottom: 60px;
     }
 }
