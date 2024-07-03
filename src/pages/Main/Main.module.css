@@ -955,14 +955,16 @@
 
 
     .overlap_3 .logo {
-        top:500px;
+        top:100px;
         z-index: -1;
-        right: 00px;
+        right: -100px;
+        width: 100%;
     }
     
     .overlap_3 .tooth {
-        bottom: -550px;
+        bottom: -50px;
         width: 100%;
+        right: 50px;
     }
     
     .overlap_3 .arrow_buttons {
@@ -1004,7 +1006,7 @@
     }
     
     .overlap_3 .text_block_one p:last-child {
-        margin-top: 50px;
+        margin-top: 20px;
     }
     
     
@@ -1015,7 +1017,7 @@
         text-align: left;
         margin-left: 20px;
         margin-right: 20px;
-        width: 350px;
+        width: 390px;
     }
     
     .overlap_3 .text_block_two>p:first-child {
@@ -1024,30 +1026,30 @@
         line-height: 25px;
         letter-spacing: 0.02em;
         text-align: left;
-        margin-top: 130px;
+        margin-top: 110px;
         width: 90%;
     }
     
     .overlap_3 .text_block_two .container {
         display: grid;
-        grid-template-columns: 150px 150px;
+        grid-template-columns: 170px 170px;
         gap: 20px;
     }
     
     .overlap_3 .text_block_two .container .text_column_one p:first-child {
-        margin-bottom: 70px;
+        margin-bottom: 20px;
     }
     
     .overlap_3 .text_block_two .container .text_column_two p:first-child {
         font-size: 11px;
         font-weight: 700;
-        line-height: 20px;
+        line-height: 18px;
         text-align: left;
-        margin-bottom: 60px;
+        margin-bottom: 25px;
     }
     
     .overlap_3 .text_block_two .container .text_column_two p:nth-child(2) {
-        margin-bottom: 60px;
+        margin-bottom: 40px;
     }
 }
 
