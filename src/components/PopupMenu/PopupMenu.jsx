@@ -1,7 +1,6 @@
 import React from "react";
 import s from "./PopupMenu.module.css";
 import closeMenuIcon from "../../assets/images/navBarImages/menu-escape.svg";
-import backgroundImg from "../../assets/images/navBarImages/popup-backgroung-img.svg";
 
 export const PopupMenu = ({ isMenuOpen, setMenuOpen }) => {
   const handleToggle = () => {
