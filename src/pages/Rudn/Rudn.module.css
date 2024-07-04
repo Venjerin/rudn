@@ -1,0 +1,102 @@
+.text_block_two {
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 57.6px;
+    text-align: left;
+    margin-left: 128px;
+    margin-right: 260px;
+    width: 1700px;
+    position: relative;
+}
+
+.text_block_two>p:first-child {
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 78px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    margin-top: 130px;
+    width: 90%;
+}
+
+.text_block_two .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 120px;
+}
+
+.text_block_two .container .text_column_one p:first-child {
+    margin-bottom: 70px;
+}
+
+.text_block_two .container .text_column_two p:first-child {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 57.6px;
+    text-align: left;
+    margin-bottom: 60px;
+}
+
+.text_block_two .container .text_column_two p:nth-child(2) {
+    margin-bottom: 60px;
+}
+
+
+.tooth {
+    position: absolute;
+    bottom: -550px;
+    overflow: hidden;
+}
+
+
+
+@media (max-width:400px) {
+    .text_block_two {
+        font-size: 11px;
+        font-weight: 400;
+        line-height: 20px;
+        text-align: left;
+        margin-left: 20px;
+        margin-right: 20px;
+        width: 390px;
+    }
+    
+    .text_block_two>p:first-child {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 25px;
+        letter-spacing: 0.02em;
+        text-align: left;
+        margin-top: 50px;
+        width: 90%;
+    }
+    
+    .text_block_two .container {
+        display: grid;
+        grid-template-columns: 170px 170px;
+        gap: 20px;
+    }
+    
+    .text_block_two .container .text_column_one p:first-child {
+        margin-bottom: 20px;
+    }
+    
+    .text_block_two .container .text_column_two p:first-child {
+        font-size: 11px;
+        font-weight: 700;
+        line-height: 18px;
+        text-align: left;
+        margin-bottom: 25px;
+    }
+    
+    .text_block_two .container .text_column_two p:nth-child(2) {
+        margin-bottom: 40px;
+    }
+
+    .tooth {
+        bottom: -50px;
+        width: 100%;
+        right: 50px;
+    }
+}
+
