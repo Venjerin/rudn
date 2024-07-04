@@ -10,7 +10,7 @@ import { useLocation } from "react-router";
 
 export const Header = ({ isMenuOpen, setMenuOpen }) => {
   const location = useLocation();
-  const isHeaderNeeded = location.pathname === "/" || "/rudn";
+  const isHeaderNeeded = location.pathname === "/" || location.pathname === "/rudn";
   const isHomePage = location.pathname === "/";
   return (
     <>

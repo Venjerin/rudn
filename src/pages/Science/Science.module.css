@@ -1,0 +1,137 @@
+.science_page {
+    margin-left: 130px;
+    margin-bottom: 50px;
+}
+
+.science_page>img {
+    margin-left: -130px;
+}
+
+.container>p {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 78px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    width: 1500px;
+}
+
+.grid_container {
+    display: grid;
+    grid-template-columns: 750px 850px;
+    gap: 60px;
+}
+
+.container {
+    margin-bottom: 100px;
+}
+
+.grid_container p:first-child {
+    width: 750px;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 57.6px;
+    text-align: left;
+}
+
+.grid_container p:last-child {
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 61.2px;
+    text-align: right;
+    color: rgba(29, 74, 231, 1);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.grid_container img {
+    margin-top: 50px;
+}
+
+
+.section {
+    display: flex;
+    justify-content: space-between;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 78px;
+    text-align: left;
+    width: 1600px;
+    border-bottom: 3px solid rgba(17, 17, 25, 0.33);
+}
+
+.section>img {
+    cursor: pointer;
+}
+
+
+@media (max-width: 400px) {
+    .science_page {
+        margin-left: 20px;
+        margin-bottom: 50px;
+    }
+
+    .science_page>img {
+        margin-left: -20px;
+        width: 400px;
+    }
+
+    .container>p {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 25px;
+        letter-spacing: 0.02em;
+        text-align: left;
+        width: 400px;
+    }
+
+    .grid_container {
+        display: grid;
+        grid-template-columns: 160px 200px;
+        gap: 30px;
+    }
+
+    .container {
+        margin-bottom: 100px;
+    }
+
+    .grid_container p:first-child {
+        width: 160px;
+        font-size: 11px;
+        font-weight: 400;
+        line-height: 20px;
+        text-align: left;
+    }
+
+    .grid_container p:last-child {
+        font-size: 11px;
+        font-weight: 400;
+        line-height: 20px;
+        text-align: right;
+        color: rgba(29, 74, 231, 1);
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    .grid_container img {
+        margin-top: 15px;
+        width: 150px;
+    }
+
+
+    .section {
+        display: flex;
+        justify-content: space-between;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 25px;
+        text-align: left;
+        width: 350px;
+        border-bottom: 2px solid rgba(17, 17, 25, 0.33);
+    }
+
+    .section>img {
+        cursor: pointer;
+        width: 20px;
+    }
+}
