@@ -959,6 +959,7 @@
         z-index: -1;
         right: -100px;
         width: 100%;
+        overflow: hidden;
     }
     
     .overlap_3 .tooth {
