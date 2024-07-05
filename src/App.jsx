@@ -15,7 +15,7 @@ function App() {
         <Route path="/science" element={<Science></Science>}></Route>
         <Route path="/education" element={<Education></Education>}></Route>
         <Route path="/clinic" element={<Error404></Error404>}></Route>
-        <Route path="/facial-prosthetic" element={<Main></Main>}></Route>
+        <Route path="/facial-prosthetic" element={<Error404></Error404>}></Route>
         <Route path="*" element={<Error404></Error404>}></Route>
       </Routes>
     </BrowserRouter>
