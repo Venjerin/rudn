@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/Footer/Footer";
 import s from "./Education.module.css";
+import { PopupMenu } from "../../components/PopupMenu/PopupMenu";
 
 export const Education = () => {
+  const [isMenuOpen, setMenuOpen] = useState(false)
   return (
     <div>
-      <Header></Header>
+      <PopupMenu isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen}></PopupMenu>
+      <Header isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen}></Header>
       <EducationPage></EducationPage>
       <Footer></Footer>
     </div>

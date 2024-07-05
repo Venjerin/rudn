@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/Footer/Footer";
 import s from "./Science.module.css";
 import colleaguesImg from "../../assets/images/scienceImages/medical-colleagues.svg";
 import prostheticImg from "../../assets/images/scienceImages/facial-prosthetic-pic.svg";
 import moreButton from '../../assets/images/scienceImages/more-button.svg'
+import { PopupMenu } from "../../components/PopupMenu/PopupMenu";
 
 export const Science = () => {
+  const [isMenuOpen, setMenuOpen] = useState(false)
   return (
     <div>
-      <Header></Header>
+      <PopupMenu isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen}></PopupMenu>
+      <Header isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen}></Header>
       <SciencePage></SciencePage>
       <Footer></Footer>
     </div>

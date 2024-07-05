@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/Footer/Footer";
 import s from "./Rudn.module.css";
 import backgroundImageFour from "../../assets/images/homeImages/overlap-3-tooth.svg";
+import { PopupMenu } from "../../components/PopupMenu/PopupMenu";
 const RudnPage = () => {
   return (
     <div className={s.text_block_two}>
@@ -48,9 +49,11 @@ const RudnPage = () => {
 };
 
 export const Rudn = () => {
+  const [isMenuOpen, setMenuOpen] = useState(false)
   return (
     <div>
-      <Header></Header>
+      <PopupMenu isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen}></PopupMenu>
+      <Header isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen}></Header>
       <RudnPage></RudnPage>
       <Footer></Footer>
     </div>
