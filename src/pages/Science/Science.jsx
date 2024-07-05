@@ -6,6 +6,7 @@ import colleaguesImg from "../../assets/images/scienceImages/medical-colleagues.
 import prostheticImg from "../../assets/images/scienceImages/facial-prosthetic-pic.svg";
 import moreButton from '../../assets/images/scienceImages/more-button.svg'
 import { PopupMenu } from "../../components/PopupMenu/PopupMenu";
+import { useNavigate } from "react-router";
 
 export const Science = () => {
   const [isMenuOpen, setMenuOpen] = useState(false)
@@ -20,6 +21,10 @@ export const Science = () => {
 };
 
 const SciencePage = () => {
+  const navigate = useNavigate();
+  const handleClick = (path) => {
+    navigate(path);
+  }
   return (
     <div className={s.science_page}>
       <img src={colleaguesImg} alt="Фотография врачей" />
@@ -36,7 +41,7 @@ const SciencePage = () => {
               последних разработок является «Способ гигиенического ухода за
               лицевыми протезами» и программа «Феникс 3D»
             </p>
-            <p>подробнее о «Феникс 3D»</p>
+            <p onClick={() => handleClick('/phoenix')}>подробнее о «Феникс 3D»</p>
           </div>
           <img src={prostheticImg} alt="Скриншот добавления протеза" />
         </div>

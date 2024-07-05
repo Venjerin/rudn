@@ -4,6 +4,7 @@ import { Rudn } from "./pages/Rudn/Rudn";
 import Error404 from "./pages/Error404/Error404";
 import { Science } from "./pages/Science/Science";
 import { Education } from "./pages/Education/Education";
+import { Phoenix } from "./pages/Phoenix/Phoenix";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/education" element={<Education></Education>}></Route>
         <Route path="/clinic" element={<Error404></Error404>}></Route>
         <Route path="/facial-prosthetic" element={<Error404></Error404>}></Route>
+        <Route path="/phoenix" element={<Phoenix></Phoenix>}></Route>
         <Route path="*" element={<Error404></Error404>}></Route>
       </Routes>
     </BrowserRouter>

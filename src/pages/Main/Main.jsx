@@ -17,8 +17,13 @@ import carouselPhotoOne from "../../assets/images/homeImages/carousel-photo-1.pn
 import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/Footer/Footer";
 import { PopupMenu } from "../../components/PopupMenu/PopupMenu";
+import { useNavigate } from "react-router";
 
 const Home = () => {
+  const navigate = useNavigate();
+  const handleClick = (path) => {
+    navigate(path);
+  }
   return (
     <div>
       <div className={s.overlap_1}>
@@ -47,14 +52,14 @@ const Home = () => {
             <div className={s.container}>
               <p>Образование</p>
             </div>
-            <p>о наших дисциплинах</p>
+            <p onClick={()=>handleClick('/education')}>о наших дисциплинах</p>
           </div>
           <div className={s.science}>
             <img src={sciencePhoto} alt="Фото лабаратории" />
             <div className={s.container}>
               <p>Наука</p>
             </div>
-            <p>подробнее</p>
+            <p onClick={()=>handleClick('/science')}>подробнее</p>
           </div>
         </div>
         <div className={s.group1_3}>

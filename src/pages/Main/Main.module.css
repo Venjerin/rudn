@@ -75,7 +75,7 @@
     line-height: 78px;
     text-align: left;
     position: absolute;
-    bottom: 40px;
+    bottom: 65px;
     padding-left: 50px;
     height: 135px;
     border-radius: 0 33px 0 0;
@@ -451,7 +451,7 @@
     
     .group1_3 .container {
         position: relative;
-        margin-bottom: 0px;
+        margin-bottom: 10px;
     }
     
     .group1_3 .container p {
@@ -463,7 +463,7 @@
         line-height: 12px;
         text-align: left;
         position: absolute;
-        bottom: -5px;
+        bottom: -16px;
         padding-left: 20px;
         height: 70px;
         border-radius: 0 33px 0 0;

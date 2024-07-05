@@ -1,0 +1,57 @@
+.phoenix_page {
+    position: relative;
+    height: 2000px;
+    background-color: rgba(17, 17, 25, 1);
+    margin-top: -110px;
+    margin-bottom: -200px;
+}
+
+.phoenix_page img {
+    position: absolute;
+    right: 0;
+}
+
+.phoenix_page .title {
+    background-color: rgba(17, 17, 25, 1);
+}
+
+.phoenix_page .title p {
+    background-color: rgba(17, 17, 25, 1);
+    font-size: 110px;
+    font-weight: 700;
+    line-height: 143px;
+    letter-spacing: 0.03em;
+    text-align: left;
+    color: rgba(242, 242, 255, 1);
+    margin-left: 190px;
+    padding-top: 500px;
+}
+
+@media (max-width:400px) {
+    .phoenix_page {
+        position: relative;
+        height: 700px;
+        background-color: rgba(17, 17, 25, 1);
+        margin-top: -110px;
+        margin-bottom: -50px;
+        width: 390px;
+    }
+
+    .phoenix_page img {
+        position: absolute;
+        right: 0;
+        top: 80px;
+        width: 300px;
+    }
+
+    .phoenix_page .title p {
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 47px;
+        letter-spacing: 0.03em;
+        text-align: left;
+        color: rgba(242, 242, 255, 1);
+        margin-left: 50px;
+        padding-top: 200px;
+    }
+}
