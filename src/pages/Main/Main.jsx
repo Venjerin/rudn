@@ -23,7 +23,7 @@ const Home = () => {
   const navigate = useNavigate();
   const handleClick = (path) => {
     navigate(path);
-  }
+  };
   return (
     <div>
       <div className={s.overlap_1}>
@@ -52,14 +52,14 @@ const Home = () => {
             <div className={s.container}>
               <p>Образование</p>
             </div>
-            <p onClick={()=>handleClick('/education')}>о наших дисциплинах</p>
+            <p onClick={() => handleClick("/education")}>о наших дисциплинах</p>
           </div>
           <div className={s.science}>
             <img src={sciencePhoto} alt="Фото лабаратории" />
             <div className={s.container}>
               <p>Наука</p>
             </div>
-            <p onClick={()=>handleClick('/science')}>подробнее</p>
+            <p onClick={() => handleClick("/science")}>подробнее</p>
           </div>
         </div>
         <div className={s.group1_3}>
@@ -198,14 +198,24 @@ const Home = () => {
   );
 };
 
-export const Main = () => {
-  const [isMenuOpen, setMenuOpen] = useState(false)
+export const Main = ({ isBlur, setBlur }) => {
+  const [isMenuOpen, setMenuOpen] = useState(false);
   return (
-    <div className={s.main_container}>
-      <PopupMenu isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen}></PopupMenu>
-      <Header isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen}></Header>
-      <Home></Home>
-      <Footer></Footer>
-    </div>
+    <>
+      <PopupMenu
+        isMenuOpen={isMenuOpen}
+        setMenuOpen={setMenuOpen}
+        setBlur={setBlur}
+      ></PopupMenu>
+      <div className={`${s.main_container} ${isBlur ? s.blur : ""}`}>
+        <Header
+          isMenuOpen={isMenuOpen}
+          setMenuOpen={setMenuOpen}
+          setBlur={setBlur}
+        ></Header>
+        <Home></Home>
+        <Footer></Footer>
+      </div>
+    </>
   );
 };

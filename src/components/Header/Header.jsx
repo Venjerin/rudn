@@ -8,9 +8,10 @@ import { НeaderMain } from "./НeaderMain/НeaderMain";
 import { HeaderRudn } from "./HeaderRudn/HeaderRudn";
 import { useLocation } from "react-router";
 
-export const Header = ({ isMenuOpen, setMenuOpen }) => {
+export const Header = ({ isMenuOpen, setMenuOpen, setBlur }) => {
   const location = useLocation();
-  const isHeaderNeeded = location.pathname === "/" || location.pathname === "/rudn";
+  const isHeaderNeeded =
+    location.pathname === "/" || location.pathname === "/rudn";
   const isHomePage = location.pathname === "/";
   return (
     <>
@@ -26,6 +27,7 @@ export const Header = ({ isMenuOpen, setMenuOpen }) => {
       <NavBar
         isMenuOpen={isMenuOpen}
         setMenuOpen={setMenuOpen}
+        setBlur={setBlur}
         className={s.navbar}
       ></NavBar>
     </>

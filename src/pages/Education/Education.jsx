@@ -4,15 +4,25 @@ import { Footer } from "../../components/Footer/Footer";
 import s from "./Education.module.css";
 import { PopupMenu } from "../../components/PopupMenu/PopupMenu";
 
-export const Education = () => {
-  const [isMenuOpen, setMenuOpen] = useState(false)
+export const Education = ({ isBlur, setBlur }) => {
+  const [isMenuOpen, setMenuOpen] = useState(false);
   return (
-    <div>
-      <PopupMenu isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen}></PopupMenu>
-      <Header isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen}></Header>
-      <EducationPage></EducationPage>
-      <Footer></Footer>
-    </div>
+    <>
+      <PopupMenu
+        isMenuOpen={isMenuOpen}
+        setMenuOpen={setMenuOpen}
+        setBlur={setBlur}
+      ></PopupMenu>
+      <div className={`${isBlur ? s.blur : ""}`}>
+        <Header
+          isMenuOpen={isMenuOpen}
+          setMenuOpen={setMenuOpen}
+          setBlur={setBlur}
+        ></Header>
+        <EducationPage></EducationPage>
+        <Footer></Footer>
+      </div>
+    </>
   );
 };
 
@@ -61,7 +71,8 @@ const EducationPage = () => {
       <div className={`${s.paragraph} ${s.paragraph_four}`}>
         <p className={s.title}>Предмет/область исследования:</p>
         <p>
-        Реабилитация пациентов с дефектами лица, травматического и онкологического генеза. 
+          Реабилитация пациентов с дефектами лица, травматического и
+          онкологического генеза.
         </p>
         <p className={s.variant}>Анапластология</p>
       </div>

@@ -2,6 +2,10 @@
     position: relative;
 }
 
+.blur {
+    filter: blur(8px);
+}
+
 .overlap_1 {
     position: relative;
 }

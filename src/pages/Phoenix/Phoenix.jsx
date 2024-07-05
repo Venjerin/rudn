@@ -5,15 +5,25 @@ import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/Footer/Footer";
 import phoenixImg from "../../assets/images/phoenixImage/phoenix.svg";
 
-export const Phoenix = () => {
+export const Phoenix = ({ isBlur, setBlur }) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   return (
-    <div>
-      <PopupMenu isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen}></PopupMenu>
-      <Header isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen}></Header>
-      <PhoenixPage></PhoenixPage>
-      <Footer></Footer>
-    </div>
+    <>
+      <PopupMenu
+        isMenuOpen={isMenuOpen}
+        setMenuOpen={setMenuOpen}
+        setBlur={setBlur}
+      ></PopupMenu>
+      <div className={`${isBlur ? s.blur : ""}`}>
+        <Header
+          isMenuOpen={isMenuOpen}
+          setMenuOpen={setMenuOpen}
+          setBlur={setBlur}
+        ></Header>
+        <PhoenixPage></PhoenixPage>
+        <Footer></Footer>
+      </div>
+    </>
   );
 };
 

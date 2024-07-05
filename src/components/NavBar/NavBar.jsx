@@ -6,19 +6,17 @@ import phoneIcon from "../../assets/images/navBarImages/navbar-phone.svg";
 import toggleIcon from "../../assets/images/navBarImages/nav-toggle.svg";
 import { Link, useLocation } from "react-router-dom";
 
-export const NavBar = ({ isMenuOpen, setMenuOpen }) => {
+export const NavBar = ({ isMenuOpen, setMenuOpen, setBlur }) => {
   const handleToggle = () => {
     setMenuOpen(!isMenuOpen);
+    setBlur (true);
   };
   const [activeLink, setActiveLink] = useState("/");
   const location = useLocation();
-  
-  useEffect(() => {
-    window.scrollTo(0,0);
-  }, [location.pathname])
 
   useEffect(() => {
     setActiveLink(location.pathname);
+    window.scrollTo(0,0);
   }, [location]);
   return (
     <nav className={s.navbar}>

@@ -48,14 +48,24 @@ const RudnPage = () => {
   );
 };
 
-export const Rudn = () => {
-  const [isMenuOpen, setMenuOpen] = useState(false)
+export const Rudn = ({ isBlur, setBlur }) => {
+  const [isMenuOpen, setMenuOpen] = useState(false);
   return (
-    <div>
-      <PopupMenu isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen}></PopupMenu>
-      <Header isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen}></Header>
-      <RudnPage></RudnPage>
-      <Footer></Footer>
-    </div>
+    <>
+      <PopupMenu
+        isMenuOpen={isMenuOpen}
+        setMenuOpen={setMenuOpen}
+        setBlur={setBlur}
+      ></PopupMenu>
+      <div className={`${isBlur ? s.blur : ""}`}>
+        <Header
+          isMenuOpen={isMenuOpen}
+          setMenuOpen={setMenuOpen}
+          setBlur={setBlur}
+        ></Header>
+        <RudnPage></RudnPage>
+        <Footer></Footer>
+      </div>
+    </>
   );
 };

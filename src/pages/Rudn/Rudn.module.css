@@ -9,6 +9,10 @@
     position: relative;
 }
 
+.blur {
+    filter: blur(8px);
+}
+
 .text_block_two>p:first-child {
     font-size: 60px;
     font-weight: 400;
