@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./HeaderRudn.module.css";
-import uniLogo from "../../../assets/images/headerImages/uni-logo.svg";
-import testLogo from "../../../assets/images/headerImages/image-2.png";
+// import uniLogo from "../../../assets/images/headerImages/uni-logo.svg";
+// import testLogo from "../../../assets/images/headerImages/image-2.png";
 
 export const HeaderRudn = () => {
   return (
