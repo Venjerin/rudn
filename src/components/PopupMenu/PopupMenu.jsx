@@ -11,6 +11,10 @@ export const PopupMenu = ({ isMenuOpen, setMenuOpen }) => {
   const location = useLocation();
 
   useEffect(() => {
+    window.scrollTo(0,0);
+  }, [location.pathname])
+
+  useEffect(() => {
     setActiveLink(location.pathname);
   }, [location]);
   return (

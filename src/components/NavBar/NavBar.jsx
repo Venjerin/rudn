@@ -12,6 +12,10 @@ export const NavBar = ({ isMenuOpen, setMenuOpen }) => {
   };
   const [activeLink, setActiveLink] = useState("/");
   const location = useLocation();
+  
+  useEffect(() => {
+    window.scrollTo(0,0);
+  }, [location.pathname])
 
   useEffect(() => {
     setActiveLink(location.pathname);
