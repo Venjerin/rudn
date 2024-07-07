@@ -6,6 +6,8 @@ import { Science } from "./pages/Science/Science";
 import { Education } from "./pages/Education/Education";
 import { Phoenix } from "./pages/Phoenix/Phoenix";
 import { useState } from "react";
+import { PersonalAccount } from "./pages/PersonalAccount/PersonalAccount";
+import { Registration } from "./pages/Registration/Registration";
 
 function App() {
   const [isBlur, setBlur] = useState(false);
@@ -20,6 +22,8 @@ function App() {
         <Route path="/clinic" element={<Error404></Error404>}></Route>
         <Route path="/facial-prosthetic" element={<Error404></Error404>}></Route>
         <Route path="/phoenix" element={<Phoenix isBlur={isBlur} setBlur={setBlur}></Phoenix>}></Route>
+        <Route path="/personal-account" element={<PersonalAccount></PersonalAccount>}></Route>
+        <Route path="/registration" element={<Registration></Registration>}></Route>
         <Route path="*" element={<Error404></Error404>}></Route>
       </Routes>
     </BrowserRouter>
