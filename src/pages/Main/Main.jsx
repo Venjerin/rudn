@@ -208,6 +208,7 @@ export const Main = ({ isBlur, setBlur }) => {
         isMenuOpen={isMenuOpen}
         setMenuOpen={setMenuOpen}
         setBlur={setBlur}
+        setLoginOpen={setLoginOpen} 
       ></PopupMenu>
       <PopupLogin setBlur={setBlur} isLoginOpen={isLoginOpen} setLoginOpen={setLoginOpen}></PopupLogin>
       <div className={`${s.main_container} ${isBlur ? s.blur : ""}`}>

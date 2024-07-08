@@ -58,6 +58,7 @@ export const Rudn = ({ isBlur, setBlur }) => {
         isMenuOpen={isMenuOpen}
         setMenuOpen={setMenuOpen}
         setBlur={setBlur}
+        setLoginOpen={setLoginOpen} 
       ></PopupMenu>
       <PopupLogin
         setBlur={setBlur}
