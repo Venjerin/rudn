@@ -1,0 +1,88 @@
+.popup_login {
+    position: fixed;
+    z-index: 1000;
+    background-color: rgba(17, 17, 25, 1);
+    height: 100vh;
+    width: 500px;
+    right: -500px;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+}
+
+.popup_login_active {
+    right: 0;
+    transform: translateX(0);
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    height: 95%;
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 300px;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+.form>input {
+    width: 120%;
+    height: 60px;
+    border: none;
+    background: transparent;
+    color: rgba(255, 255, 255, 1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.33);
+    font-size: 20px;
+    padding-left: 20px;
+}
+
+.form>input:first-child {
+    margin-bottom: 20px;
+}
+
+.popup_login img {
+    width: 40px;
+    margin-top: 100px;
+    margin-left: 50px;
+    z-index: 1100;
+}
+
+.buttons {
+    float: right;
+    margin-right: 50px;
+}
+
+.buttons button {
+    margin-top: 50px;
+    width: 150px;
+    height: 60px;
+    border-radius: 30px;
+    border: 0;
+    font-size: 24px;
+    margin-right: 5px;
+    background-color: rgba(29, 74, 231, 1);
+    color: rgba(255, 255, 255, 1);
+    line-height: 10px;
+    cursor: pointer;
+}
+
+.buttons button:first-child {
+    margin-right: 70px;
+    padding-left: 0;
+    border-radius: 0;
+    height: 25px;
+    width: 150px;
+    background: transparent;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.33);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.33);
+}
+

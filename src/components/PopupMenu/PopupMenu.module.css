@@ -66,6 +66,7 @@
     margin-right: 5px;
     background-color: rgba(29, 74, 231, 1);
     color: rgba(255, 255, 255, 1);
+    line-height: 10px;
 }
 
 .buttons button:last-child {
@@ -76,4 +77,5 @@
     border: 1px solid rgba(255, 255, 255, 1);
     background-color: transparent;
     color: rgba(255, 255, 255, 1);
+    line-height: 10px;
 }

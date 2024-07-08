@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import s from "./PopupMenu.module.css";
 import closeMenuIcon from "../../assets/images/navBarImages/menu-escape.svg";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export const PopupMenu = ({ isMenuOpen, setMenuOpen, setBlur }) => {
   const handleToggle = () => {
@@ -12,6 +12,12 @@ export const PopupMenu = ({ isMenuOpen, setMenuOpen, setBlur }) => {
   const location = useLocation();
 
   const handleClick = () => {
+    setBlur(false);
+  }
+
+  const navigate = useNavigate();
+  const toRegistration = () => {
+    navigate('/registration');
     setBlur(false);
   }
 
@@ -84,7 +90,7 @@ export const PopupMenu = ({ isMenuOpen, setMenuOpen, setBlur }) => {
       </div>
       <div className={s.buttons}>
         <button>Войти</button>
-        <button>Регистрация</button>
+        <button onClick={toRegistration}>Регистрация</button>
       </div>
     </div>
   );

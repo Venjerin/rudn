@@ -21,7 +21,7 @@ export const Registration = () => {
   };
 
   const handleOutsideSubmit = () => {
-    const form = document.getElementById("loginForm");
+    const form = document.getElementById("signUpForm");
     if (form) {
       // form.submit();
       console.log('Отправка формы:', fullName, password);
@@ -43,7 +43,7 @@ export const Registration = () => {
             <p className={s.title}>Регистрация</p>
           </div>
           <div>
-            <form id="loginForm" className={s.form}>
+            <form id="signUpForm" className={s.form}>
               <input
                 type="text"
                 placeholder="ФИО"

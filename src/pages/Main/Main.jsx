@@ -18,6 +18,7 @@ import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/Footer/Footer";
 import { PopupMenu } from "../../components/PopupMenu/PopupMenu";
 import { useNavigate } from "react-router";
+import { PopupLogin } from "../../components/PopupLogin/PopupLogin";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -207,6 +208,7 @@ export const Main = ({ isBlur, setBlur }) => {
         setMenuOpen={setMenuOpen}
         setBlur={setBlur}
       ></PopupMenu>
+      <PopupLogin></PopupLogin>
       <div className={`${s.main_container} ${isBlur ? s.blur : ""}`}>
         <Header
           isMenuOpen={isMenuOpen}
