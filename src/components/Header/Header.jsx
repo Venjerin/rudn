@@ -8,7 +8,7 @@ import { НeaderMain } from "./НeaderMain/НeaderMain";
 import { HeaderRudn } from "./HeaderRudn/HeaderRudn";
 import { useLocation } from "react-router";
 
-export const Header = ({ isMenuOpen, setMenuOpen, setBlur }) => {
+export const Header = ({ isMenuOpen, setMenuOpen, setBlur, setLoginOpen }) => {
   const location = useLocation();
   const isHeaderNeeded =
     location.pathname === "/" || location.pathname === "/rudn";
@@ -28,6 +28,7 @@ export const Header = ({ isMenuOpen, setMenuOpen, setBlur }) => {
         isMenuOpen={isMenuOpen}
         setMenuOpen={setMenuOpen}
         setBlur={setBlur}
+        setLoginOpen={setLoginOpen}
         className={s.navbar}
       ></NavBar>
     </>

@@ -4,24 +4,33 @@ import { useLocation, useNavigate } from "react-router";
 import closeLoginIcon from "../../assets/images/personalAccImages/return-button.svg";
 
 export const PopupLogin = ({ isLoginOpen, setLoginOpen, setBlur }) => {
-  const handleToggle = () => {
+  const [login, setLogin] = useState("");
+  const [password, setPassword] = useState("");
+  const handleLoginChange = (event) => {
+    setLogin(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handleClick = () => {
     setLoginOpen(false);
     setBlur(false);
+    setLogin('');
+    setPassword('');
   };
   //   const [, setActiveLink] = useState("/");
   const location = useLocation();
-
-  const handleClick = () => {
-    setBlur(false);
-  };
 
   const navigate = useNavigate();
   const toRegistration = () => {
     navigate("/registration");
     setBlur(false);
+    setLoginOpen(false);
   };
 
-  //   isLoginOpen = true;
+  // isLoginOpen = true;
 
   useEffect(() => {
     // setActiveLink(location.pathname);
@@ -36,13 +45,13 @@ export const PopupLogin = ({ isLoginOpen, setLoginOpen, setBlur }) => {
           src={closeLoginIcon}
           alt="Закрыть меню"
           className={s.nav_close}
-          onClick={handleToggle}
+          onClick={handleClick}
         />
 
         <div className={s.content}>
-          <form id="loginForm" className={s.form}>
-            <input type="login" placeholder="Логин" />
-            <input type="password" placeholder="Пароль" />
+          <form id="loginForm" className={s.form} autoComplete="off">
+            <input type="login" placeholder="Логин" onChange={handleLoginChange} value={login}/>
+            <input type="password" placeholder="Пароль" onChange={handlePasswordChange} value={password}/>
           </form>
           <div className={s.buttons}>
             <button onClick={toRegistration}>Регистрация</button>

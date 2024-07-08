@@ -18,6 +18,8 @@ export const Registration = () => {
   const navigate = useNavigate();
   const backButtonHandler = () => {
     navigate(-1);
+    setFullName('');
+    setPassword('');
   };
 
   const handleOutsideSubmit = () => {
@@ -48,11 +50,13 @@ export const Registration = () => {
                 type="text"
                 placeholder="ФИО"
                 onChange={handleFullNameChange}
+                value={fullName}
               />
               <input
                 type="password"
                 placeholder="Пароль"
                 onChange={handlePasswordChange}
+                value={password}
               />
             </form>
           </div>

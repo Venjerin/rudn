@@ -6,11 +6,17 @@ import phoneIcon from "../../assets/images/navBarImages/navbar-phone.svg";
 import toggleIcon from "../../assets/images/navBarImages/nav-toggle.svg";
 import { Link, useLocation } from "react-router-dom";
 
-export const NavBar = ({ isMenuOpen, setMenuOpen, setBlur }) => {
+export const NavBar = ({ isMenuOpen, setMenuOpen, setBlur, setLoginOpen }) => {
   const handleToggle = () => {
     setMenuOpen(!isMenuOpen);
     setBlur (true);
   };
+
+  const handleLoginClick = ()=> {
+    setBlur(true);
+    setLoginOpen(true)
+  }
+
   const [activeLink, setActiveLink] = useState("/");
   const location = useLocation();
 
@@ -68,7 +74,7 @@ export const NavBar = ({ isMenuOpen, setMenuOpen, setBlur }) => {
       <div className={s.actions}>
         <img src={mailIcon} alt="Иконка почты" />
         <img src={phoneIcon} alt="Иконка телефона" />
-        <img src={loginIcon} alt="Иконка логина" />
+        <img src={loginIcon} alt="Иконка логина" onClick={handleLoginClick}/>
       </div>
     </nav>
   );

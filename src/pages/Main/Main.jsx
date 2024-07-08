@@ -201,6 +201,7 @@ const Home = () => {
 
 export const Main = ({ isBlur, setBlur }) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [isLoginOpen, setLoginOpen] = useState(false);
   return (
     <>
       <PopupMenu
@@ -208,12 +209,13 @@ export const Main = ({ isBlur, setBlur }) => {
         setMenuOpen={setMenuOpen}
         setBlur={setBlur}
       ></PopupMenu>
-      <PopupLogin></PopupLogin>
+      <PopupLogin setBlur={setBlur} isLoginOpen={isLoginOpen} setLoginOpen={setLoginOpen}></PopupLogin>
       <div className={`${s.main_container} ${isBlur ? s.blur : ""}`}>
         <Header
           isMenuOpen={isMenuOpen}
           setMenuOpen={setMenuOpen}
           setBlur={setBlur}
+          setLoginOpen={setLoginOpen}
         ></Header>
         <Home></Home>
         <Footer></Footer>

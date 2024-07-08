@@ -7,11 +7,13 @@
     right: -500px;
     transform: translateX(-100%);
     transition: transform 0.5s ease;
+    display: none;
 }
 
 .popup_login_active {
     right: 0;
     transform: translateX(0);
+    display: block;
 }
 
 
@@ -86,3 +88,89 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.33);
 }
 
+@media (max-width:400px) {
+    .popup_login {
+        height: 50vh;
+        width: 250px;
+        right: 0;
+        transform: translateX(0);
+        transition: transform 0.5s ease;
+    }
+
+    .popup_login_active {
+        right: 535px;
+        transform: translateX(-100%);
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        height: 95%;
+    }
+
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 130px;
+        margin-left: 20px;
+        margin-top: 30px;
+    }
+
+    .form>input {
+        width: 120%;
+        height: 20px;
+        border: none;
+        background: transparent;
+        color: rgba(255, 255, 255, 1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.33);
+        font-size: 12px;
+        padding-left: 20px;
+    }
+
+    .form>input:first-child {
+        margin-bottom: 20px;
+    }
+
+    .popup_login img {
+        width: 20px;
+        margin-top: 50px;
+        margin-left: 20px;
+        z-index: 1100;
+    }
+
+    .buttons {
+        float: right;
+        margin-right: 20px;
+    }
+
+    .buttons button {
+        margin-top: 50px;
+        width: 80px;
+        height: 30px;
+        border-radius: 30px;
+        border: 0;
+        font-size: 14px;
+        margin-right: 20px;
+        background-color: rgba(29, 74, 231, 1);
+        color: rgba(255, 255, 255, 1);
+        line-height: 10px;
+        cursor: pointer;
+    }
+
+    .buttons button:first-child {
+        margin-right: 20px;
+        padding-left: 0;
+        border-radius: 0;
+        height: 25px;
+        width: 85px;
+        background: transparent;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.33);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.33);
+    }
+
+}
