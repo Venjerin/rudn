@@ -4,6 +4,7 @@ import { Footer } from "../../components/Footer/Footer";
 import s from "./Rudn.module.css";
 import backgroundImageFour from "../../assets/images/homeImages/overlap-3-tooth.svg";
 import { PopupMenu } from "../../components/PopupMenu/PopupMenu";
+import { PopupLogin } from "../../components/PopupLogin/PopupLogin";
 const RudnPage = () => {
   return (
     <div className={s.text_block_two}>
@@ -50,6 +51,7 @@ const RudnPage = () => {
 
 export const Rudn = ({ isBlur, setBlur }) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [isLoginOpen, setLoginOpen] = useState(false);
   return (
     <>
       <PopupMenu
@@ -57,11 +59,17 @@ export const Rudn = ({ isBlur, setBlur }) => {
         setMenuOpen={setMenuOpen}
         setBlur={setBlur}
       ></PopupMenu>
+      <PopupLogin
+        setBlur={setBlur}
+        isLoginOpen={isLoginOpen}
+        setLoginOpen={setLoginOpen}
+      ></PopupLogin>
       <div className={`${isBlur ? s.blur : ""}`}>
         <Header
           isMenuOpen={isMenuOpen}
           setMenuOpen={setMenuOpen}
           setBlur={setBlur}
+          setLoginOpen={setLoginOpen}
         ></Header>
         <RudnPage></RudnPage>
         <Footer></Footer>

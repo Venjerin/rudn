@@ -7,9 +7,11 @@ import prostheticImg from "../../assets/images/scienceImages/facial-prosthetic-p
 import moreButton from "../../assets/images/scienceImages/more-button.svg";
 import { PopupMenu } from "../../components/PopupMenu/PopupMenu";
 import { useNavigate } from "react-router";
+import { PopupLogin } from "../../components/PopupLogin/PopupLogin";
 
 export const Science = ({ isBlur, setBlur }) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [isLoginOpen, setLoginOpen] = useState(false);
   return (
     <>
       <PopupMenu
@@ -17,12 +19,17 @@ export const Science = ({ isBlur, setBlur }) => {
         setMenuOpen={setMenuOpen}
         setBlur={setBlur}
       ></PopupMenu>
-
+      <PopupLogin
+        setBlur={setBlur}
+        isLoginOpen={isLoginOpen}
+        setLoginOpen={setLoginOpen}
+      ></PopupLogin>
       <div className={`${isBlur ? s.blur : ""}`}>
         <Header
           isMenuOpen={isMenuOpen}
           setMenuOpen={setMenuOpen}
           setBlur={setBlur}
+          setLoginOpen={setLoginOpen}
         ></Header>
         <SciencePage></SciencePage>
         <Footer></Footer>

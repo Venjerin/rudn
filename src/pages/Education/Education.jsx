@@ -3,9 +3,11 @@ import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/Footer/Footer";
 import s from "./Education.module.css";
 import { PopupMenu } from "../../components/PopupMenu/PopupMenu";
+import { PopupLogin } from "../../components/PopupLogin/PopupLogin";
 
 export const Education = ({ isBlur, setBlur }) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [isLoginOpen, setLoginOpen] = useState(false);
   return (
     <>
       <PopupMenu
@@ -13,11 +15,17 @@ export const Education = ({ isBlur, setBlur }) => {
         setMenuOpen={setMenuOpen}
         setBlur={setBlur}
       ></PopupMenu>
+      <PopupLogin
+        setBlur={setBlur}
+        isLoginOpen={isLoginOpen}
+        setLoginOpen={setLoginOpen}
+      ></PopupLogin>
       <div className={`${isBlur ? s.blur : ""}`}>
         <Header
           isMenuOpen={isMenuOpen}
           setMenuOpen={setMenuOpen}
           setBlur={setBlur}
+          setLoginOpen={setLoginOpen}
         ></Header>
         <EducationPage></EducationPage>
         <Footer></Footer>
