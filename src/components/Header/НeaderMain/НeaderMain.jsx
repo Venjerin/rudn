@@ -1,8 +1,8 @@
 import React from "react";
 import s from './НeaderMain.module.css'
 import uniLogo from "../../../assets/images/headerImages/uni-logo.svg";
-// import toothLogo from '../../../assets/images/headerImages/tooth-logo.svg'
-import testLogo from "../../../assets/images/headerImages/image-2.png";
+import toothLogo from '../../../assets/images/headerImages/tooth-logo.svg'
+// import testLogo from "../../../assets/images/headerImages/image-2.png";
 
 export const НeaderMain = () => {
   return (
@@ -10,7 +10,7 @@ export const НeaderMain = () => {
       <div className={s.banner_content}>
         <div className={s.images}>
           <img src={uniLogo} alt="Логотип университета" />
-          <img src={testLogo} alt="Картинка зуба" style={{ width: "100px" }} />
+          <img src={toothLogo} alt="Картинка зуба" />
         </div>
         <div className={s.text}>
           <h1>
