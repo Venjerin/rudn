@@ -8,11 +8,14 @@ import { Phoenix } from "./pages/Phoenix/Phoenix";
 import { useState } from "react";
 import { PersonalAccount } from "./pages/PersonalAccount/PersonalAccount";
 import { Registration } from "./pages/Registration/Registration";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
 
 function App() {
   const [isBlur, setBlur] = useState(false);
   return (
-    <BrowserRouter>
+    <Provider store = {store}>
+      <BrowserRouter>
       <Routes>
         <Route path="/" element={<Main isBlur={isBlur} setBlur={setBlur}></Main>}></Route>
         <Route path="/rudn" element={<Rudn isBlur={isBlur} setBlur={setBlur}></Rudn>}></Route>
@@ -27,6 +30,7 @@ function App() {
         <Route path="*" element={<Error404></Error404>}></Route>
       </Routes>
     </BrowserRouter>
+    </Provider>
   );
 }
 
