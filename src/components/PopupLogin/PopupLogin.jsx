@@ -30,8 +30,6 @@ export const PopupLogin = ({ isLoginOpen, setLoginOpen, setBlur }) => {
     setLoginOpen(false);
   };
 
-  // isLoginOpen = true;
-
   useEffect(() => {
     // setActiveLink(location.pathname);
     window.scrollTo(0, 0);
