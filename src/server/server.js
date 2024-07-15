@@ -5,6 +5,7 @@ import { User } from "./models/User.js";
 import { registerValidation } from "./validations/auth.js";
 import { validationResult } from "express-validator";
 import bcrypt from "bcrypt";
+import jwt from 'jsonwebtoken';
 
 dotenv.config();
 const PORT = process.env.PORT || 5000;
@@ -34,15 +35,25 @@ app.post("/register", registerValidation, async (req, res) => {
 
     const password = req.body.password;
     const salt = await bcrypt.genSalt(10);
-    const passwordHash = await bcrypt.hash(password, salt);
+    const hash = await bcrypt.hash(password, salt);
 
     const doc = new User({
       email: req.body.email,
-      passwordHash,
+      passwordHash: hash,
     });
-
     const user = await doc.save();
-    res.json(user);
+
+    const token = jwt.sign({
+        _id: user._id
+    }, 'secret-key', {
+        expiresIn: '30d'
+    })
+    const {passwordHash, ...userData} = user._doc
+
+    res.json({
+        ...userData,
+        token
+    });
   } catch (error) {
     console.error("Error during user registration:", error);
     res.status(500).json({ message: "Internal server error" });
