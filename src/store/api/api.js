@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const userApi = createApi({
     reducerPath: 'signInApi',
     baseQuery: fetchBaseQuery({
-        baseUrl: 'https://.............'
+        baseUrl: 'http://localhost:5000/'
     }),
     endpoints: (builder) => ({
         getUser: builder.query({
@@ -11,12 +11,13 @@ export const userApi = createApi({
         }),
         registerUser: builder.mutation ({
             query: (user) => ({
-                url:'register',
+                url:'registration',
                 method: 'POST',
                 body: user
             })
         })
     })
 })
+
 
 export const {useGetUserQuery, useRegisterUserMutation} = userApi;
