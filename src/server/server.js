@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import express from "express";
 import dotenv from "dotenv";
-import { registerValidation } from "./validations/auth.js";
+import { loginValidation, registerValidation } from "./validations.js";
 import { checkAuth } from "./utils/checkAuth.js";
 import * as UserController from './controllers/UserController.js'
 
@@ -24,7 +24,7 @@ mongoose
     console.error("Error connecting to MongoDB:", err);
   });
 
-  app.post("/auth/login", UserController.login);
+  app.post("/auth/login", loginValidation, UserController.login);
   app.post("/auth/register", registerValidation, UserController.register);
   app.get("/auth/me", checkAuth, UserController.getMe);
 
