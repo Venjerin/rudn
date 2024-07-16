@@ -5,7 +5,8 @@ import { User } from "./models/User.js";
 import { registerValidation } from "./validations/auth.js";
 import { validationResult } from "express-validator";
 import bcrypt from "bcrypt";
-import jwt from 'jsonwebtoken';
+import jwt from "jsonwebtoken";
+import { checkAuth } from "./utils/checkAuth.js";
 
 dotenv.config();
 const PORT = process.env.PORT || 5000;
@@ -26,7 +27,48 @@ mongoose
     console.error("Error connecting to MongoDB:", err);
   });
 
-app.post("/register", registerValidation, async (req, res) => {
+app.post("/auth/login", async (req, res) => {
+  try {
+    const user = await User.findOne({ email: req.body.email });
+    if (!user) {
+      return res.status(404).json({
+        message: "Пользователь не найден",
+      });
+    }
+
+    const isValidPass = await bcrypt.compare(
+      req.body.password,
+      user._doc.passwordHash
+    );
+    if (!isValidPass) {
+      return res.status(400).json({
+        message: "Неверный логин или пароль",
+      });
+    }
+
+    const token = jwt.sign(
+      {
+        _id: user._id,
+      },
+      "secret-key",
+      {
+        expiresIn: "30d",
+      }
+    );
+
+    const { passwordHash, ...userData } = user._doc;
+
+    res.json({
+      ...userData,
+      token,
+    });
+  } catch (error) {
+    console.error("Error during user authorisation:", error);
+    res.status(500).json({ message: "Error during user authorisation" });
+  }
+});
+
+app.post("/auth/register", registerValidation, async (req, res) => {
   try {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -43,16 +85,20 @@ app.post("/register", registerValidation, async (req, res) => {
     });
     const user = await doc.save();
 
-    const token = jwt.sign({
-        _id: user._id
-    }, 'secret-key', {
-        expiresIn: '30d'
-    })
-    const {passwordHash, ...userData} = user._doc
+    const token = jwt.sign(
+      {
+        _id: user._id,
+      },
+      "secret-key",
+      {
+        expiresIn: "30d",
+      }
+    );
+    const { passwordHash, ...userData } = user._doc;
 
     res.json({
-        ...userData,
-        token
+      ...userData,
+      token,
     });
   } catch (error) {
     console.error("Error during user registration:", error);
@@ -60,7 +106,25 @@ app.post("/register", registerValidation, async (req, res) => {
   }
 });
 
-app.listen(PORT, (err) => {
+app.get("/auth/me", checkAuth, async (req, res) => {
+    try {
+      const user = await User.findById(req.userId);
+  
+      if (!user) {
+        return res.status(404).json({
+          message: "Пользователь не найден",
+        });
+      }
+      const { passwordHash, ...userData } = user._doc;
+  
+      res.json(userData);
+    } catch (error) {
+      console.error("Something went wrong:", error);
+      res.status(500).json({ message: "Нет доступа" });
+    }
+  });
+
+app.listen(4444, (err) => {
   if (err) {
     return console.log(err);
   }
