@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from '../axios'
 
 export const fetchAuth = createAsyncThunk("/auth/fetchAuth",async (params) => {
@@ -25,52 +25,53 @@ const initialState = {
 }
 
 const authSlice = createSlice({
-    name: 'auth',
-    initialState,
-    reducers: {
-        logout: (state) => {
-            state.data = null
-        }
+  name: "auth",
+  initialState,
+  reducers: {
+    logout: (state) => {
+      state.data = null;
     },
-    extraReducers: {
-        [fetchAuth.pending]: (state, action) => {
-            state.status = 'loading'
-            state.data = null
-        },
-        [fetchAuth.fulfilled]: (state, action) => {
-            state.data = action.payload
-            state.status = 'loaded'
-        },
-        [fetchAuth.rejected]: (state, action) => {
-            state.data = null
-            state.status = 'error'
-        },
-        [fetchAuthMe.pending]: (state, action) => {
-            state.status = 'loading'
-            state.data = null
-        },
-        [fetchAuthMe.fulfilled]: (state, action) => {
-            state.data = action.payload
-            state.status = 'loaded'
-        },
-        [fetchAuthMe.rejected]: (state, action) => {
-            state.data = null
-            state.status = 'error'
-        },
-        [fetchRegister.pending]: (state) => {
-            state.status = 'loading'
-            state.data = null
-        },
-        [fetchRegister.fulfilled]: (state, action) => {
-            state.data = action.payload
-            state.status = 'loaded'
-        },
-        [fetchRegister.rejected]: (state) => {
-            state.data = null
-            state.status = 'error'
-        }
-    }
-})
+  },
+  extraReducers: (bulder) => {
+    bulder
+      .addCase(fetchAuth.pending, (state) => {
+        state.status = "loading";
+        state.data = null;
+      })
+      .addCase(fetchAuth.fulfilled, (state, action) => {
+        state.data = action.payload;
+        state.status = "loaded";
+      })
+      .addCase(fetchAuth.rejected, (state) => {
+        state.data = null;
+        state.status = "error";
+      })
+      .addCase(fetchAuthMe.pending, (state) => {
+        state.status = "loading";
+        state.data = null;
+      })
+      .addCase(fetchAuthMe.fulfilled, (state, action) => {
+        state.data = action.payload;
+        state.status = "loaded";
+      })
+      .addCase(fetchAuthMe.rejected, (state) => {
+        state.data = null;
+        state.status = "error";
+      })
+      .addCase(fetchRegister.pending, (state) => {
+        state.status = "loading";
+        state.data = null;
+      })
+      .addCase(fetchRegister.fulfilled, (state, action) => {
+        state.data = action.payload;
+        state.status = "loaded";
+      })
+      .addCase(fetchRegister.rejected, (state) => {
+        state.data = null;
+        state.status = "error";
+      });
+  },
+});
 
 export const selectIsAuth = state => Boolean(state.auth.data)
 
