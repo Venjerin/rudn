@@ -5,12 +5,19 @@ import Error404 from "./pages/Error404/Error404";
 import { Science } from "./pages/Science/Science";
 import { Education } from "./pages/Education/Education";
 import { Phoenix } from "./pages/Phoenix/Phoenix";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { PersonalAccount } from "./pages/PersonalAccount/PersonalAccount";
 import { Registration } from "./pages/Registration/Registration";
+import { useDispatch } from "react-redux";
+import { fetchAuthMe } from "./redux/slices/auth";
 
 function App() {
   const [isBlur, setBlur] = useState(false);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchAuthMe())
+  }, [dispatch])
   return (
     <BrowserRouter>
       <Routes>
