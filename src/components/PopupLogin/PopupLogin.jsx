@@ -2,25 +2,19 @@ import React, { useEffect, useState } from "react";
 import s from "./PopupLogin.module.css";
 import { useLocation, useNavigate } from "react-router";
 import closeLoginIcon from "../../assets/images/personalAccImages/return-button.svg";
+import { useDispatch } from "react-redux";
+import { fetchAuth } from "../../redux/slices/auth";
+import { useForm } from "react-hook-form";
 
 export const PopupLogin = ({ isLoginOpen, setLoginOpen, setBlur }) => {
-  const [login, setLogin] = useState("");
-  const [password, setPassword] = useState("");
-  const handleLoginChange = (event) => {
-    setLogin(event.target.value);
-  };
-
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
+  const dispatch = useDispatch();
 
   const handleClick = () => {
     setLoginOpen(false);
     setBlur(false);
-    setLogin('');
-    setPassword('');
+    setValue('email','');
+    setValue('password','');
   };
-  //   const [, setActiveLink] = useState("/");
   const location = useLocation();
 
   const navigate = useNavigate();
@@ -30,8 +24,30 @@ export const PopupLogin = ({ isLoginOpen, setLoginOpen, setBlur }) => {
     setLoginOpen(false);
   };
 
+  const { register, handleSubmit, setValue } = useForm({
+    defaultValues: {
+      email: 'text@text.ru',
+      password: '12345'
+    },
+    mode: 'onChange'
+  })
+
+  const onSubmit = async (values) => {
+    const data = await dispatch(fetchAuth(values))
+
+    if(!data.payload){
+      return alert('Не удалось авторизоваться')
+    }
+
+    if('token' in data.payload){
+      window.localStorage.setItem('token', data.payload.token)
+    }
+    setBlur(false);
+    setLoginOpen(false);
+    navigate('/')
+  }
+
   useEffect(() => {
-    // setActiveLink(location.pathname);
     window.scrollTo(0, 0);
   }, [location]);
   return (
@@ -47,13 +63,20 @@ export const PopupLogin = ({ isLoginOpen, setLoginOpen, setBlur }) => {
         />
 
         <div className={s.content}>
-          <form id="loginForm" className={s.form} autoComplete="off">
-            <input type="login" placeholder="Логин" onChange={handleLoginChange} value={login}/>
-            <input type="password" placeholder="Пароль" onChange={handlePasswordChange} value={password}/>
+          <form 
+            id="loginForm"
+            onSubmit={handleSubmit(onSubmit)}
+            className={s.form}
+            autoComplete="off"
+          >
+            <input type="email" {...register("email")} />
+            <input type="password" {...register("password")} />
           </form>
           <div className={s.buttons}>
             <button onClick={toRegistration}>Регистрация</button>
-            <button>Войти</button>
+            <button type="submit" form="loginForm" >
+              Войти
+            </button>
           </div>
         </div>
       </div>
