@@ -2,8 +2,13 @@ import React, { useEffect, useState } from "react";
 import s from "./PopupMenu.module.css";
 import closeMenuIcon from "../../assets/images/navBarImages/menu-escape.svg";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logout, selectIsAuth } from "../../redux/slices/auth";
 
 export const PopupMenu = ({ isMenuOpen, setMenuOpen, setBlur, setLoginOpen }) => {
+  const dispatch = useDispatch();
+  const isAuth = useSelector(selectIsAuth);
+  
   const handleToggle = () => {
     setMenuOpen(false);
     setBlur(false);
@@ -24,6 +29,16 @@ export const PopupMenu = ({ isMenuOpen, setMenuOpen, setBlur, setLoginOpen }) =>
   const toLogin = () => {
     setMenuOpen(false);
     setLoginOpen(true);
+  }
+
+  const handleLogout = () => {
+    if(window.confirm('Вы действительно хотите выйти?')){
+      dispatch(logout());
+      setMenuOpen(false);
+      navigate('/')
+      setBlur(false);
+      window.localStorage.removeItem('token')
+    }
   }
 
   useEffect(() => {
@@ -94,8 +109,15 @@ export const PopupMenu = ({ isMenuOpen, setMenuOpen, setBlur, setLoginOpen }) =>
         </ul>
       </div>
       <div className={s.buttons}>
-        <button onClick={toLogin}>Войти</button>
-        <button onClick={toRegistration}>Регистрация</button>
+        {isAuth ? (
+          <button style={{marginLeft:"35px"}} onClick={handleLogout}>Выйти</button>
+        ) : (
+          <>
+          <button onClick={toLogin}>Войти</button>
+          <button onClick={toRegistration}>Регистрация</button>
+  
+          </>
+        )}
       </div>
     </div>
   );
