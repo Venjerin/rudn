@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import s from "./PopupLogin.module.css";
 import { useLocation, useNavigate } from "react-router";
 import closeLoginIcon from "../../assets/images/personalAccImages/return-button.svg";
