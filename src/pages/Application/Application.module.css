@@ -1,0 +1,139 @@
+.account_page {
+    background-color: rgba(17, 17, 25, 1);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.image_container {
+    position: fixed;
+    bottom: 0;
+    left: -10px;
+    opacity: 0.1;
+    width: 570px;
+}
+
+.header {
+    display: flex;
+    margin-top: 50px;
+    margin-left: 60px;
+}
+
+.header>p {
+    margin-left: 150px;
+    align-items: center;
+}
+
+.return_button {
+    cursor: pointer;
+    margin-right: 10px;
+    padding-bottom: 20px;
+}
+
+.title {
+    width: 600px;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 78px;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    margin-left: 120px;
+}
+
+.form>input {
+    height: 100px;
+    border: none;
+    background: transparent;
+    color: rgba(255, 255, 255, 1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.33);
+    font-size: 36px;
+    padding-left: 50px;
+    margin-bottom: 20px;
+}
+
+.registration_button {
+    position: fixed;
+    bottom: 40px;
+    right: 100px;
+    width: 250px;
+    height: 70px;
+    border-radius: 35px;
+    border: none;
+    background-color: rgba(29, 74, 231, 1);
+    color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+}
+
+
+@media (max-width:400px) {
+    .image_container {
+        bottom: 0;
+        left: -10px;
+        opacity: 0.2;
+        width: 200px;
+    }
+
+    .header {
+        margin-top: 50px;
+        margin-left: 30px;
+    }
+
+    .header>p {
+        margin-left: 30px;
+        align-items: center;
+    }
+
+    .return_button {
+        margin-right: 10px;
+        padding-bottom: 5px;
+        width: 30px;
+    }
+
+    .title {
+        width: 200px;
+        font-size: 25px;
+        line-height: 25px;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        margin-left: 50px;
+        margin-top: 30px;
+    }
+
+    .form>input {
+        height: 60px;
+        border: none;
+        background: transparent;
+        color: rgba(255, 255, 255, 1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.33);
+        font-size: 16px;
+        padding-left: 50px;
+    }
+
+    .form>input:focus {
+        background: transparent;
+        color: rgba(255, 255, 255, 1);
+    }
+
+
+    .registration_button {
+        position: fixed;
+        bottom: 60px;
+        right: 40px;
+        width: 150px;
+        height: 45px;
+        border-radius: 35px;
+        font-size: 16px;
+        line-height: 10px;
+    }
+}

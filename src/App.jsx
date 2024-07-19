@@ -10,6 +10,7 @@ import { PersonalAccount } from "./pages/PersonalAccount/PersonalAccount";
 import { Registration } from "./pages/Registration/Registration";
 import { useDispatch } from "react-redux";
 import { fetchAuthMe } from "./redux/slices/auth";
+import { Application } from "./pages/Application/Application";
 
 function App() {
   const [isBlur, setBlur] = useState(false);
@@ -31,6 +32,7 @@ function App() {
         <Route path="/phoenix" element={<Phoenix isBlur={isBlur} setBlur={setBlur}></Phoenix>}></Route>
         <Route path="/personal-account" element={<PersonalAccount></PersonalAccount>}></Route>
         <Route path="/registration" element={<Registration></Registration>}></Route>
+        <Route path="/application" element={<Application></Application>}></Route>
         <Route path="*" element={<Error404></Error404>}></Route>
       </Routes>
     </BrowserRouter>
