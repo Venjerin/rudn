@@ -4,17 +4,30 @@ import mailIcon from "../../assets/images/navBarImages/navbar-mail.svg";
 import loginIcon from "../../assets/images/navBarImages/navbar-login.svg";
 import phoneIcon from "../../assets/images/navBarImages/navbar-phone.svg";
 import toggleIcon from "../../assets/images/navBarImages/nav-toggle.svg";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logout, selectIsAuth } from "../../redux/slices/auth";
 
 export const NavBar = ({ isMenuOpen, setMenuOpen, setBlur, setLoginOpen }) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const isAuth = useSelector(selectIsAuth);
   const handleToggle = () => {
     setMenuOpen(!isMenuOpen);
     setBlur (true);
   };
 
   const handleLoginClick = ()=> {
-    setBlur(true);
-    setLoginOpen(true)
+    if(isAuth){
+      if(window.confirm('Вы действительно хотите выйти?')){
+        dispatch(logout());
+        navigate('/')
+        window.localStorage.removeItem('token')
+      }
+    } else {
+      setBlur(true);
+      setLoginOpen(true)
+    }
   }
 
   const [activeLink, setActiveLink] = useState("/");
