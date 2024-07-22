@@ -6,6 +6,7 @@ import { useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchRegister, selectIsAuth } from "../../redux/slices/auth";
+import googleIcon from '../../assets/images/registrationImages/google-color-svgrepo-com.svg'
 
 export const Registration = () => {
   const dispatch = useDispatch();
@@ -45,6 +46,45 @@ export const Registration = () => {
     }
   }
 
+  // const oauthSignIn = () => {
+  //   var oauth2Endpoint = 'https://accounts.google.com/o/oauth2/v2/auth';
+  
+  //   var form = document.createElement('form');
+  //   form.setAttribute('method', 'GET'); 
+  //   form.setAttribute('action', oauth2Endpoint);
+  
+  //   var params = {
+  //     'client_id': '96875601024-uq5paf8sgnf5iec6aktgsrfa5n4o0e50.apps.googleusercontent.com',
+  //     'redirect_uri': 'http://localhost:3000/oauth-callback-google',
+  //     'response_type': 'code',
+  //     'scope': 'email profile',
+  //     'state': 'pass-through value'
+  //   };
+  
+  //   for (var p in params) {
+  //     var input = document.createElement('input');
+  //     input.setAttribute('type', 'hidden');
+  //     input.setAttribute('name', p);
+  //     input.setAttribute('value', params[p]);
+  //     form.appendChild(input);
+  //   }
+  
+  //   document.body.appendChild(form);
+  //   form.submit();
+  // }
+
+  const GoogleButton = () => {
+    const login = () => {
+      const CLIENT_ID = '96875601024-h4j0momk2kd5u2bkmg9hk4rhf4lraqdd.apps.googleusercontent.com'
+      const REDIRECT_URL = 'http://localhost:3000/oauth-callback-google'
+      const scope = 'email profile';
+      const url = `https://accounts.google.com/o/oauth2/v2/auth?scope=${scope}&response_type=code&redirect_uri=${REDIRECT_URL}&client_id=${CLIENT_ID}`
+      window.location.assign(url);
+    }
+
+    return <img style={{zIndex:5000, cursor:"pointer"}} width={100} height={100} alt="Google" src={googleIcon} onClick={login}></img>
+  }
+
   return (
     <>
       <img src={backgroungImg} alt="" className={s.image_container} />
@@ -76,6 +116,8 @@ export const Registration = () => {
                 type="password"
                 placeholder="Введите пароль"
               />
+              <GoogleButton></GoogleButton>
+              {/* <button onClick={oauthSignIn} style={{zIndex:5000, cursor:"pointer"}}>Google</button> */}
               <button
                 type="submit"
                 className={s.registration_button}
